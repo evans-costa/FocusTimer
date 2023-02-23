@@ -1,4 +1,4 @@
-export default function Controls({ pauseButton, playButton }) {
+export default function TimerControls({ pauseButton, playButton }) {
   function playTimer() {
     pauseButton.classList.remove("hide");
     playButton.classList.add("hide");

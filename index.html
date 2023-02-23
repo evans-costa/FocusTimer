@@ -9,53 +9,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon" />
+    <script src="js/index.js" type="module" defer></script>
   </head>
-  <body>
+  <body class="light">
     <main>
       <div class="timer-container">
-        <div class="timer">
+        <div class="timer light">
           <span class="minutes">25</span>
           <span>:</span>
           <span class="seconds">00</span>
         </div>
         <div class="controls">
-          <button class="play">
-            <img src="./assets/buttons/playButton.svg" alt="Play timer button" />
+          <button class="play light">
+            <img src="./assets/controls/playButton.svg" alt="Play timer button" />
           </button>
 
-          <button class="pause hide">
-            <img src="./assets/buttons/pauseButton.svg" alt="Pause timer button" />
+          <button class="pause light hide">
+            <img src="./assets/controls/pauseButton.svg" alt="Pause timer button" />
           </button>
 
-          <button class="stop">
-            <img src="./assets/buttons/stopButton.svg" alt="Stop timer button" />
+          <button class="stop light">
+            <img src="./assets/controls/stopButton.svg" alt="Stop timer button" />
           </button>
 
-          <button class="add-time">
-            <img src="./assets/buttons/addTimeButton.svg" alt="Add time button" />
+          <button class="add-time light">
+            <img src="./assets/controls/addTimeButton.svg" alt="Add time button" />
           </button>
 
-          <button class="reduce-time">
-            <img src="./assets/buttons/reduceTimeButton.svg" alt="Reduce time button" />
+          <button class="reduce-time light">
+            <img src="./assets/controls/reduceTimeButton.svg" alt="Reduce time button" />
           </button>
         </div>
       </div>
 
-      <div class="card-icon-container">
-        <button class="sound-forest">
+      <div class="card-icon-container light">
+        <button class="sound-forest light">
           <img src="./assets/icons/forestIcon.svg" alt="Forest icon button" />
+          <input type="range" min="0" max="100" step="1" />
         </button>
-        <button class="sound-rainy">
+        <button class="sound-rainy light">
           <img src="./assets/icons/rainyIcon.svg" alt="Rainy icon button" />
+          <input type="range" min="0" max="100" step="1" />
         </button>
-        <button class="sound-cafe">
+        <button class="sound-cafe light">
           <img src="./assets/icons/homeIcon.svg" alt="Coffee shop icon button" />
+          <input type="range" min="0" max="100" step="1" />
         </button>
-        <button class="sound-fire">
+        <button class="sound-fire light">
           <img src="./assets/icons/fireIcon.svg" alt="Fire icon button" />
+          <input type="range" min="0" max="100" step="1" />
         </button>
       </div>
     </main>
-    <script src="js/index.js" type="module"></script>
+    <button class="light-mode">
+      <img src="./assets/icons/lightModeIcon.svg" alt="Sun icon" />
+    </button>
+
+    <button class="dark-mode hide">
+      <img src="./assets/icons/darkModeIcon.svg" alt="Moon icon" />
+    </button>
   </body>
 </html>

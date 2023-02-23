@@ -1,9 +1,6 @@
-export default function Sounds() {
-  const forestSound = new Audio("assets/audios/floresta.wav");
-  const rainySound = new Audio("assets/audios/Chuva.wav");
-  const cafeSound = new Audio("assets/audios/Cafeteria.wav");
-  const fireSound = new Audio(" assets/audios/Lareira.wav");
+import { forestSound, rainySound, cafeSound, fireSound } from "./elements.js";
 
+export default function Sounds() {
   function pauseSounds(soundOne, soundTwo, soundThree) {
     soundOne.pause();
     soundTwo.pause();
