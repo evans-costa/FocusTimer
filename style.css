@@ -34,6 +34,7 @@ body {
   background-color: var(--bg-light-colorcolor);
   font-family: var(--ff-primary);
 
+  margin: 0 auto;
   padding: 6rem 6rem;
 
   transition: all 0.5s;
@@ -59,14 +60,16 @@ button {
 .hide {
   display: none;
 }
+.light-mode,
+.dark-mode {
+  place-self: start;
+}
 
 .light-mode {
-  place-self: start;
   animation: spin 4s;
 }
 
 .dark-mode {
-  place-self: start;
   animation: turnaround 2s forwards;
 }
 
@@ -201,19 +204,14 @@ body.dark {
   background-color: #fff;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   body {
-    display: flex;
     flex-direction: column;
-
     width: fit-content;
-    height: fit-content;
   }
 
   main {
     display: grid;
-    grid-template-areas: auto auto;
-
     gap: 5rem;
 
     padding: 5rem;
@@ -228,13 +226,15 @@ body.dark {
   }
 }
 
-@media (max-width: 1080px) {
+@media (min-width: 601px) and (max-width: 1080px) {
   body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
+    margin: 0 auto;
 
     width: fit-content;
-    height: fit-content;
   }
 
   .light-mode,
