@@ -29,15 +29,14 @@
 
 body {
   display: flex;
+  height: 100vh;
 
   background-color: var(--bg-light-colorcolor);
   font-family: var(--ff-primary);
 
-  height: 100vh;
-}
+  padding: 6rem 6rem;
 
-body.dark {
-  background-color: var(--bg-dark-color);
+  transition: all 0.5s;
 }
 
 main {
@@ -61,11 +60,14 @@ button {
   display: none;
 }
 
-.light-mode,
+.light-mode {
+  place-self: start;
+  animation: spin 4s;
+}
+
 .dark-mode {
   place-self: start;
-
-  padding: 6rem 6rem 0 0;
+  animation: turnaround 2s forwards;
 }
 
 .timer-container {
@@ -82,6 +84,8 @@ button {
   font-weight: 500;
 
   color: var(--color-light-primary);
+
+  transition: all 0.5s;
 }
 
 .controls {
@@ -112,7 +116,7 @@ button {
   gap: 3.5rem;
   padding: 2.9rem 2.4rem;
 
-  transition: all 200ms;
+  transition: all 0.5s;
 }
 
 .card-icon-container button:hover,
@@ -137,6 +141,8 @@ button {
   -webkit-appearance: none;
   background-color: var(--color-light-primary);
   border-radius: 5px;
+
+  transition: all 0.5s;
 }
 
 .card-icon-container input[type="range"]::-webkit-slider-thumb {
@@ -147,6 +153,8 @@ button {
   height: 1.6rem;
   border-radius: 10rem;
   background-color: var(--color-light-primary);
+
+  transition: all 0.5s;
 }
 
 .card-icon-container button:hover input[type="range"],
@@ -191,4 +199,69 @@ body.dark {
 .card-icon-container.dark input[type="range"],
 .card-icon-container.dark input[type="range"]::-webkit-slider-thumb {
   background-color: #fff;
+}
+
+@media (max-width: 425px) {
+  body {
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+    height: fit-content;
+  }
+
+  main {
+    display: grid;
+    grid-template-areas: auto auto;
+
+    gap: 5rem;
+
+    padding: 5rem;
+  }
+
+  .light-mode,
+  .dark-mode {
+    place-self: center;
+    padding: 2rem;
+
+    order: -1;
+  }
+}
+
+@media (max-width: 1080px) {
+  body {
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .light-mode,
+  .dark-mode {
+    place-self: center;
+    margin-bottom: 5rem;
+
+    order: -1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes turnaround {
+  from {
+    transform: rotateY(0);
+  }
+
+  to {
+    transform: rotateY(180deg);
+  }
 }
