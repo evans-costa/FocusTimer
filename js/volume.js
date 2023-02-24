@@ -1,11 +1,6 @@
 import { forestSound, rainySound, cafeSound, fireSound } from "./elements.js";
 
 export default function SetVolume({ forestInputRange, rainyInputRange, cafeInputRange, fireInputRange }) {
-  function setDefault(sound, soundInput) {
-    soundInput.value = 50;
-    sound.volume = soundInput.value / 100;
-  }
-
   function setForest() {
     forestSound.volume = forestInputRange.value / 100;
   }
@@ -22,11 +17,16 @@ export default function SetVolume({ forestInputRange, rainyInputRange, cafeInput
     fireSound.volume = fireInputRange.value / 100;
   }
 
+  function setDefault(sound, inputSound) {
+    inputSound.value = 50;
+    sound.volume = inputSound.value / 100;
+  }
+
   return {
-    setDefault,
     setForest,
     setRainy,
     setCafe,
     setFire,
+    setDefault,
   };
 }

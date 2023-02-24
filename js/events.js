@@ -16,8 +16,8 @@ import {
   cafeInputRange,
   forestSound,
   rainySound,
-  cafeSound,
   fireSound,
+  cafeSound,
 } from "./elements.js";
 
 export default function Events({ timer, timerControls, sounds, setVolume, colorModes }) {
@@ -35,6 +35,7 @@ export default function Events({ timer, timerControls, sounds, setVolume, colorM
     timerControls.stopTimer();
     timer.reset();
     sounds.stopAllSounds();
+    colorModes.removeAllPreviousSelectedElements();
   });
 
   addTimeButton.addEventListener("click", function () {
@@ -45,24 +46,40 @@ export default function Events({ timer, timerControls, sounds, setVolume, colorM
     timer.reduceFiveMinutes();
   });
 
-  forestSoundButton.addEventListener("click", function () {
-    sounds.playForestSound();
-    setVolume.setDefault(forestSound, forestInputRange);
+  forestSoundButton.addEventListener("click", function (event) {
+    if (event.target.type != "range") {
+      sounds.playForestSound();
+      setVolume.setDefault(forestSound, forestInputRange);
+      colorModes.removeAllPreviousSelectedElements();
+      colorModes.selectElement(this);
+    }
   });
 
-  rainySoundButton.addEventListener("click", function () {
-    sounds.playRainySound();
-    setVolume.setDefault(rainySound, rainyInputRange);
+  rainySoundButton.addEventListener("click", function (event) {
+    if (event.target.type != "range") {
+      sounds.playRainySound();
+      setVolume.setDefault(rainySound, rainyInputRange);
+      colorModes.removeAllPreviousSelectedElements();
+      colorModes.selectElement(this);
+    }
   });
 
-  cafeSoundButton.addEventListener("click", function () {
-    sounds.playCafeSound();
-    setVolume.setDefault(cafeSound, cafeInputRange);
+  cafeSoundButton.addEventListener("click", function (event) {
+    if (event.target.type != "range") {
+      sounds.playCafeSound();
+      setVolume.setDefault(cafeSound, cafeInputRange);
+      colorModes.removeAllPreviousSelectedElements();
+      colorModes.selectElement(this);
+    }
   });
 
-  fireSoundButton.addEventListener("click", function () {
-    sounds.playFireSound();
-    setVolume.setDefault(fireSound, fireInputRange);
+  fireSoundButton.addEventListener("click", function (event) {
+    if (event.target.type != "range") {
+      sounds.playFireSound();
+      setVolume.setDefault(fireSound, fireInputRange);
+      colorModes.removeAllPreviousSelectedElements();
+      colorModes.selectElement(this);
+    }
   });
 
   lightModeButton.addEventListener("click", function () {

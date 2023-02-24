@@ -1,3 +1,6 @@
+import Sounds from "./sounds.js";
+import { playButton, pauseButton } from "./elements.js";
+
 export default function Timer({ minutesDisplay, secondsDisplay }) {
   let timerTimeout;
   let minutes = Number(minutesDisplay.textContent);
@@ -17,6 +20,9 @@ export default function Timer({ minutesDisplay, secondsDisplay }) {
 
       if (isFinished) {
         reset();
+        Sounds().stopAllSounds();
+        pauseButton.classList.add("hide");
+        playButton.classList.remove("hide");
         return;
       }
 
