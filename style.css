@@ -31,22 +31,20 @@ body {
   display: flex;
   height: 100vh;
 
+  margin: 0 auto;
+
   background-color: var(--bg-light-colorcolor);
   font-family: var(--ff-primary);
-
-  margin: 0 auto;
-  padding: 6rem 6rem;
 
   transition: all 0.5s;
 }
 
 main {
-  margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
+  margin: 0 auto;
   gap: 19.2rem;
 }
 
@@ -60,9 +58,11 @@ button {
 .hide {
   display: none;
 }
+
 .light-mode,
 .dark-mode {
   place-self: start;
+  margin: 5rem;
 }
 
 .light-mode {
@@ -207,28 +207,30 @@ body.dark {
 @media (max-width: 600px) {
   body {
     flex-direction: column;
+    align-items: center;
     width: fit-content;
+
+    padding: 1rem;
   }
 
   main {
     display: grid;
     gap: 5rem;
 
-    padding: 5rem;
+    padding: 2rem 0;
   }
 
   .light-mode,
   .dark-mode {
     place-self: center;
-    padding: 2rem;
+    margin: 2rem 0 0 0;
 
     order: -1;
   }
 }
 
-@media (min-width: 601px) and (max-width: 1080px) {
+@media (min-width: 601px) and (max-width: 1024px) {
   body {
-    display: flex;
     flex-direction: column;
     justify-content: center;
 
@@ -237,10 +239,17 @@ body.dark {
     width: fit-content;
   }
 
+  main {
+    display: grid;
+    gap: 5rem;
+
+    padding: 2rem 0;
+  }
+
   .light-mode,
   .dark-mode {
     place-self: center;
-    margin-bottom: 5rem;
+    margin: 2rem 0 0 0;
 
     order: -1;
   }

@@ -1,30 +1,34 @@
 export default function ColorModes({ darkModeButton, lightModeButton }) {
-  let selectLightElements = document.querySelectorAll(".light");
-  let selectAllCardSounds = document.querySelectorAll("div > button");
+  let getElementsToChange;
+  let getAllCardSounds = document.querySelectorAll(".card");
 
   function changeToDarkMode() {
+    getElementsToChange = document.querySelectorAll(".light");
+
     darkModeButton.classList.remove("hide");
     lightModeButton.classList.add("hide");
 
-    selectLightElements.forEach((element) => {
+    getElementsToChange.forEach((element) => {
       element.classList.remove("light");
       element.classList.add("dark");
     });
   }
 
   function changeToLightMode() {
+    getElementsToChange = document.querySelectorAll(".dark");
+
     darkModeButton.classList.add("hide");
     lightModeButton.classList.remove("hide");
 
-    selectLightElements.forEach((element) => {
+    getElementsToChange.forEach((element) => {
       element.classList.remove("dark");
       element.classList.add("light");
     });
   }
 
   function removeAllPreviousSelectedElements() {
-    for (let i = 0; i < selectAllCardSounds.length; i++) {
-      let cardSound = selectAllCardSounds[i];
+    for (let i = 0; i < getAllCardSounds.length; i++) {
+      let cardSound = getAllCardSounds[i];
 
       if (cardSound.classList.contains("selected")) {
         cardSound.classList.remove("selected");
