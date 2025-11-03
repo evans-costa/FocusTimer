@@ -59,8 +59,11 @@ FocusTimer/
 
 ### Pré-requisitos
 
+Você pode acessar através [desse link](https://evans-costa.github.io/FocusTimer/) OU em desenvolvimento:
+
 - Um navegador web moderno (Chrome, Firefox, Safari, Edge)
 - Servidor web local (opcional, mas recomendado para desenvolvimento)
+
 
 ### Instalação e Execução
 
